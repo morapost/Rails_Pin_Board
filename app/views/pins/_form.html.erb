@@ -1,0 +1,7 @@
+<%= simple_form_for(@pin, html: { class: 'form-horizontal' }) do |f| %>
+	<%= f.input :title, required: true %>
+	<%= f.input :description, hint: 'Write the detailed description about the pin' %>
+	<%= f.button :submit, class: 'btn btn-primary' %>
+<% end %>
+<br>
+<%= link_to "Back", root_path %>
