@@ -1,12 +1,29 @@
-<div class="col-md-6">
-	<%= image_tag @pin.image.url(:medium) %>
-</div>
-<div class="col-md-6 col-md-offset-2">	
-	<h1><%= @pin.title %></h1><br/>
-	<p><%= @pin.description %></p>
-	<p>submitted by <%= @pin.user.email %></p>
-	<br/>
-	<%= link_to "back", root_path %>
+<div id="pin_show" class="row">
+	<div class="col-md-8 col-md-offset-2">
+		<div class="panel panel-default">
+			<div class="panel-heading pin_image">
+				<%= image_tag @pin.image.url %>
+			</div>
+			<div class="panel-body">
+				<h1><%= @pin.title %></h1><br/>
+				<p class="description"><%= @pin.description %></p>
+			</div>
+			<div class="panel-footer">
+				<div class="row">
+					<div class="col-md-6">
+						<p class="user">submitted by <%= @pin.user.email %></p>
+					</div>
+					<div class="col-md-6">
+						<div class="btn-group pull-right">
+							<% if user_signed_in? %>
+								<%= link_to "Edit", edit_pin_path %> | <%= link_to "destroy", pin_path, method: :delete, data: {confirm: 'Are you sure?'}  %>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
 </div>
 
 

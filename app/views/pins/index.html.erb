@@ -1,16 +1,12 @@
-<div class="row">
-	
-	<div class="col-md-8">
-
-		
-		<% @pins.each do |pin| %>
-			<%= link_to (image_tag pin.image.url(:medium)), pin %> <br/><br>
-			<%= link_to pin.title, pin %> - <%= link_to "Edit", edit_pin_path(pin) %> | <%= link_to "destroy", pin, method: :delete, data: {confirm: 'Are you sure?'}  %>
-			<p>submitted by <%= pin.user.email %></p>
-			<hr>
-			
-		<% end %>
-		
-	</div>
-	
+<div id="pins" class="transitions-enabled">	
+	<% @pins.each do |pin| %>
+		<div class="box panel panel-default">
+			<%= link_to (image_tag pin.image.url), pin %>
+			<div class="panel-body">
+				<%= link_to pin.title, pin %>
+				<p class="user">submitted by <%= pin.user.email %></p>
+			</div>
+		</div>		
+	<% end %>
 </div>
+
