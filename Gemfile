@@ -17,6 +17,7 @@ gem 'bootstrap-sass'
 gem 'simple_form'
 gem 'paperclip', '~> 5.1'
 gem 'masonry-rails'
+gem 'acts_as_votable'
 gem 'devise'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
